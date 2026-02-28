@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-midnight: #0d0f12;
+  --bg-forest: #0d2818;
+  --accent-emerald: #00ff88;
+  --accent-cyan: #00d4ff;
+  --glass-border: rgba(0, 255, 136, 0.15);
+  --glass-bg: rgba(13, 15, 18, 0.5);
+  --text-primary: #e8f5e9;
+  --text-muted: #9ca3af;
+}
+
+.vibe-lowfi {
+  --accent-emerald: #8b7355;
+  --accent-cyan: #6b8e9a;
+  --glass-border: rgba(139, 115, 85, 0.2);
+  --text-primary: #f5ebe0;
+  --text-muted: #a08f7a;
+}
+
+.vibe-cyber {
+  --accent-emerald: #00ff88;
+  --accent-cyan: #00d4ff;
+  --glass-border: rgba(0, 255, 136, 0.25);
+  --text-primary: #e8f5e9;
+  --text-muted: #9ca3af;
+}
+
+body {
+  background-color: var(--bg-midnight);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Animated radial gradient background */
+.bg-cyber-gradient {
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 40%,
+    rgba(13, 40, 24, 0.9) 0%,
+    rgba(13, 40, 24, 0.4) 40%,
+    transparent 70%
+  );
+  animation: gradient-pulse 8s ease-in-out infinite;
+}
+
+@keyframes gradient-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Digital rain streaks */
+.rain-streak {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 212, 255, 0.15),
+    transparent
+  );
+  animation: rain-fall 1.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
